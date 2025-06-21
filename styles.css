@@ -1,0 +1,428 @@
+/* ============================
+   Google Fonts Import
+============================= */
+@import url('https://fonts.bunny.net/css?family=alata:400');
+
+/* ============================
+   CSS Variables
+============================= */
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+  --accent: #FF0000;
+  --dark-bg: #343247;
+  --footer-bg: #2a2a3a;
+  --bubble: rgba(105, 88, 88, 0.945);
+}
+
+/* ============================
+   Reset and Base Styles
+============================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Alata', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+  user-select: none;
+}
+
+body, html {
+  height: 100%;
+  background-image: url(hilux.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: var(--text);
+  background-color: var(--bg);
+  transition: background 0.3s, color 0.3s;
+}
+
+.dark-mode {
+  --bg: #111111;
+  --text: #f2f2f2;
+}
+
+.fade-in {
+  animation: fadeIn 1.2s ease-in-out both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+[data-aos] {
+  opacity: 0;
+  transition-property: transform, opacity;
+}
+
+[data-aos].aos-animate {
+  opacity: 1;
+}
+
+/* ============================
+   Navbar
+============================= */
+.navbar {
+  height: 80px;
+  width: 100%;
+  background-color: var(--dark-bg);
+  position: relative;
+}
+
+.logo img {
+  width: 250px;
+  height: 100px;
+  display: block;
+  margin: 20px auto;
+}
+
+.navbar ul {
+  list-style: none;
+  width: 100%;
+  justify-content: center;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--dark-bg);
+  position: absolute;
+  top: 80px;
+  left: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+.navbar ul.show {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 10px;
+}
+
+.navbar li a {
+  display: block;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px 14px;
+  border-radius: 20px;
+  font-weight: 900;
+  transition: background 0.3s;
+}
+
+.navbar li a:hover {
+  background-color: var(--accent);
+}
+
+.menu-toggle, .dark-toggle {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  z-index: 1001;
+}
+
+.menu-toggle {
+  color: var(--accent);
+  left: 20px;
+}
+
+.dark-toggle {
+  color: var(--text);
+  right: 20px;
+}
+
+/* ============================
+   Hero Section
+============================= */
+.hero-text {
+  padding: 20px;
+  text-align: center;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+/* ============================
+   About Section & Services
+============================= */
+.about-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 40px 20px;
+  background-image: url(prad.jpg);
+  background-size: cover;
+}
+
+.about-section h2 {
+  color: #ffffff;
+  font-size: 2rem;
+  text-align: center;
+  width: 100%;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  width: 100%;
+  justify-items: center;
+}
+
+.service-card {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 280px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+/* ============================
+   CTA Section
+============================= */
+.cta-section {
+  background-color: var(--dark-bg);
+  color: #ffffff;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.cta-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.cta-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.btn-cta {
+  background-color: var(--accent);
+  color: white;
+  padding: 12px 30px;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.btn-cta:hover {
+  background-color: #cc0000;
+}
+
+/* ============================
+   Footer
+============================= */
+.site-footer {
+  background-color: var(--dark-bg);
+  color: white;
+  padding: 40px 20px 20px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-about, .footer-contact, .footer-social {
+  flex: 1 1 250px;
+}
+
+.footer-about h3,
+.footer-contact h4,
+.footer-social h4 {
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.social-icon {
+  margin-right: 10px;
+  font-size: 20px;
+  color: white;
+  transition: color 0.3s;
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  color: var(--accent);
+}
+
+/* ============================
+   Back to Top Button
+============================= */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: var(--accent);
+  color: white;
+  padding: 12px 14px;
+  border-radius: 50%;
+  font-size: 18px;
+  display: none;
+  z-index: 1000;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.back-to-top:hover {
+  transform: translateY(-3px);
+  background-color: #cc0000;
+}
+
+/* ============================
+   Forms
+============================= */
+.login-section, .signup-section, .forgot-password-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 40px 20px;
+  background-color: var(--bg);
+}
+
+.form-container {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.form-container input,
+.form-container textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.form-container button {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--accent);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.form-container button:hover {
+  background-color: #cc0000;
+}
+
+.form-container a {
+  margin-top: 15px;
+  color: var(--accent);
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+/* ============================
+   Bubble Animation
+============================= */
+.bubble-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.bubble {
+  position: absolute;
+  bottom: -100px;
+  background-color: var(--bubble);
+  border-radius: 50%;
+  opacity: 0;
+  animation: floatUp 20s linear infinite;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120vh) scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* ============================
+   Responsive Design
+============================= */
+@media (max-width: 768px) {
+  .navbar ul.show {
+    flex-direction: column;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .logo img {
+    width: 180px;
+    height: auto;
+  }
+
+  .hero-text h1,
+  .hero-text p,
+  .cta-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .cta-content p {
+    font-size: 1rem;
+  }
+}
