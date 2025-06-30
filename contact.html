@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - Kisii Toyota</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<!-- Email Overlay Prompt -->
+<div id="emailPromptOverlay" style="position:fixed;z-index:9999;top:0;left:0;width:100%;height:100%;background:#000000d9;display:flex;justify-content:center;align-items:center;">
+  <div style="background:#fff;padding:30px;border-radius:12px;text-align:center;width:90%;max-width:400px;">
+    <h2>Please enter your email to continue</h2>
+    <input type="email" id="userEmail" placeholder="you@example.com" style="padding:12px;width:100%;margin-top:15px;border:1px solid #ccc;border-radius:6px;">
+    <button onclick="submitUserEmail()" style="margin-top:15px;padding:10px 20px;background:var(--accent);color:#fff;border:none;border-radius:6px;font-weight:bold;">Continue</button>
+    <p id="emailError" style="color:red;margin-top:10px;display:none;">Please enter a valid email</p>
+  </div>
+</div>
+
+<!-- Navbar -->
+<div class="navbar">
+  <button class="dark-toggle" title="Toggle Dark Mode">
+    <i class="fa fa-moon-o"></i>
+  </button>
+
+  <div class="logo">
+    <img src="Logo.jpg" alt="KISII TOYOTA Logo">
+  </div>
+
+  <button class="menu-toggle" aria-label="Toggle navigation">
+    <i class="fa fa-bars"></i>
+  </button>
+
+  <div class="links">
+    <ul class="nav-links">
+      <li><a href="index.html"><i class="fa fa-fw fa-home"></i>Site Home</a></li>
+      <li><a href="about.html"><i class="fa fa-fw fa-info-circle"></i>About Us</a></li>
+      <li><a href="portfolio.html"><i class="fa fa-fw fa-briefcase"></i>Car Accessories</a></li>
+      <li><a href="blog.html"><i class="fa fa-fw fa-pencil"></i>Blog</a></li>
+      <li><a href="contact.html" class="active"><i class="fa fa-fw fa-envelope"></i>Find Us</a></li>
+      <li><a href="login.html"><i class="fa fa-fw fa-user"></i>Get a Quote</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Contact Section -->
+<main>
+<section class="login-section">
+  <div class="form-container">
+    <h1>Contact Us</h1>
+    <p>Fill in the form and we’ll respond shortly.</p>
+    <form action="https://formsubmit.co/kellyovvy@gmail.com" method="POST" class="contact-form">
+      <input type="hidden" name="_next" value="thanks.html">
+
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Your Message:</label>
+      <textarea id="message" name="message" rows="6" required></textarea>
+
+      <button type="submit" class="btn">Send Message</button>
+
+      <div style="margin-top: 24px; display: flex; flex-direction: column; gap: 16px; align-items: flex-start;">
+        <a href="https://wa.me/25472342345" target="_blank" style="display: flex; align-items: center; text-decoration: none;">
+          <i class="fa fa-whatsapp" style="font-size: 28px; color: #25D366; margin-right: 10px;"></i>
+          <span style="font-size: 18px; color: #000;">WhatsApp Us</span>
+        </a>
+        <a href="tel:+25472342345" style="display: flex; align-items: center; text-decoration: none;">
+          <i class="fa fa-phone" style="font-size: 26px; color: #007BFF; margin-right: 10px;"></i>
+          <span style="font-size: 18px; color: #000;">Call Us</span>
+        </a>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-about">
+      <h3>Kisii Toyota</h3>
+      <p>Empowering businesses through Software Development, Networking, and Graphic Design.</p>
+    </div>
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p><i class="fa fa-envelope"></i> info@kisiitoyota.com</p>
+      <p><i class="fa fa-phone"></i> +254700000000</p>
+      <p><i class="fa fa-map-marker"></i> Kisii-Kilgoris Rd, before Menyinkwa Market</p>
+    </div>
+    <div class="footer-social">
+      <h4>Follow Us</h4>
+      <a href="https://facebook.com/ovitalihanda" class="social-icon"><i class="fa fa-facebook"></i></a>
+      <a href="https://x.com/Kellie_ovie" class="social-icon"><i class="fa fa-twitter"></i></a>
+      <a href="https://linkedin.com/in/kelly-ovita-110215278" class="social-icon"><i class="fa fa-linkedin"></i></a>
+      <a href="https://instagram.com/ov11745" class="social-icon"><i class="fa fa-instagram"></i></a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 KISII TOYOTA - DEEPEAST INVESTMENT LTD</p>
+  </div>
+</footer>
+
+<!-- JavaScript -->
+<script>
+  function validateEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
+  function submitUserEmail() {
+    const emailInput = document.getElementById("userEmail");
+    const error = document.getElementById("emailError");
+    const email = emailInput.value.trim();
+
+    if (!validateEmail(email)) {
+      error.style.display = "block";
+      return;
+    }
+
+    error.style.display = "none";
+    document.getElementById("emailPromptOverlay").style.display = "none";
+    document.getElementById("email").value = email;
+  }
+</script>
+<script src="script.js"></script>
+</body>
+</html>
