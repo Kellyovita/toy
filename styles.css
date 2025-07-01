@@ -458,7 +458,7 @@ main {
   display: inline-block;
   white-space: nowrap;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  width: 30%;
+
 }
 
 .opening-hours-box i {
@@ -480,5 +480,4 @@ main {
    display: flex;
   justify-content: flex-start;
   padding: 10px 20px 0;
-  width: 30%;
 }
