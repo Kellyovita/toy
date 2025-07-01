@@ -481,3 +481,28 @@ main {
   justify-content: flex-start;
   padding: 10px 20px 0;
 }
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--accent);
+    padding: 10px;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    background: var(--bg);
+    padding: 1rem;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
